@@ -9,7 +9,7 @@
 #'                 family = gaussian, data = anorexia[ anorexia$Prewt > 70.25,])
 #' disk_usage(anorex.1, full_data = anorexia)
 #' }
-disk_usage.glm = function(object, ..., full_data) {
+disk_usage.glm = function(object, full_data) {
   # beauty if doing this is that any data that's not used for model
   # is automatically dropped (NA/etc)
   outdf = stats::model.frame(object$formula, data = object$data)

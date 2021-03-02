@@ -1,13 +1,14 @@
 Package: du
-Title: What the Package Does (One Line, Title Case)
+Title: Data Usage
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
+Authors@R: c(
+    person(given = "John",
+           family = "Muschelli",
+           email = "muschellij2@gmail.com",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+           comment = c(ORCID = "0000-0001-6469-1750"))
+    )
+Description: Implements a data usage measure.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
@@ -20,3 +21,5 @@ Imports:
     rlang
 Suggests: 
     MASS
+URL: https://github.com/muschellij2/du
+BugReports: https://github.com/muschellij2/du/issues

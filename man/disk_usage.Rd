@@ -8,9 +8,9 @@
 \usage{
 disk_usage(object, full_data)
 
-\method{disk_usage}{ggplot}(object = ggplot2::last_plot(), ..., full_data)
+\method{disk_usage}{ggplot}(object = ggplot2::last_plot(), full_data)
 
-\method{disk_usage}{glm}(object, ..., full_data)
+\method{disk_usage}{glm}(object, full_data)
 }
 \arguments{
 \item{object}{Different types, including \code{glm}, \code{ggplot}.}

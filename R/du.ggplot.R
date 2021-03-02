@@ -1,6 +1,6 @@
 #' @rdname disk_usage
 #' @export
-disk_usage.ggplot = function(object = ggplot2::last_plot(), ..., full_data) {
+disk_usage.ggplot = function(object = ggplot2::last_plot(), full_data) {
 
   used_data = object$data
   all_gdata = lapply(object$layers, `[[`, "data")
