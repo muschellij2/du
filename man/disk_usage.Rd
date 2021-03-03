@@ -2,11 +2,14 @@
 % Please edit documentation in R/du.R, R/du.ggplot.R, R/du.glm.R
 \name{disk_usage}
 \alias{disk_usage}
+\alias{disk_usage.default}
 \alias{disk_usage.ggplot}
 \alias{disk_usage.glm}
 \title{Disk Usage of Specific Object}
 \usage{
 disk_usage(object, full_data)
+
+\method{disk_usage}{default}(object, full_data)
 
 \method{disk_usage}{ggplot}(object = ggplot2::last_plot(), full_data)
 

@@ -12,18 +12,22 @@
 #' if (requireNamespace("MASS", quietly = TRUE)) {
 #' utils::data(anorexia, package = "MASS")
 #'
+#' sub_anor = anorexia[anorexia$Prewt > 73,]
+#'
 #' anorex.1 <- glm(Postwt ~ Prewt + Treat + offset(Prewt),
 #'                 family = gaussian, data = anorexia[anorexia$Prewt > 70.25,])
 #' anorex.2 <- glm(Postwt ~ Prewt + offset(Prewt),
-#'                 family = gaussian, data = anorexia[anorexia$Prewt > 73,])
-#' du(anorex.1, anorex.2, full_data = anorexia)
+#'                 family = gaussian, data = anorexia)
+#' du(anorex.1, anorex.2, sub_anor, full_data = anorexia)
 #' library(ggplot2)
 #' library(dplyr)
 #' g = anorexia %>%
 #'    filter(Prewt > 75 & Postwt < 100) %>%
 #'    ggplot(aes(x = Prewt, y = Postwt, colour = Treat))
 #' g2 = anorexia %>%
-#'    ggplot(aes(x = Prewt, y = Postwt)) + geom_point()
+#'    ggplot(aes(x = Prewt, y = Postwt)) +
+#'    geom_point() +
+#'    geom_line(aes(size = Treat))
 #' du(g, g2,  full_data = anorexia)
 #' du(g, g2, anorex.1, anorex.2,  full_data = anorexia)
 #' }
@@ -47,6 +51,8 @@ disk_usage = function(object, full_data) {
   UseMethod("disk_usage", object)
 }
 
+#' @export
+#' @rdname disk_usage
 disk_usage.default = function(object, full_data) {
   if ("data" %in% names(object)) {
     object = object$data
