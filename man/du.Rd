@@ -40,6 +40,6 @@ g2 = anorexia \%>\%
    geom_point() +
    geom_line(aes(size = Treat))
 du(g, g2,  full_data = anorexia)
-du(g, g2, anorex.1, anorex.2,  full_data = anorexia)
+du(g, g2, anorex.1, anorex.2, list(data = sub_anor), full_data = anorexia)
 }
 }

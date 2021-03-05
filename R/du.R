@@ -27,9 +27,9 @@
 #' g2 = anorexia %>%
 #'    ggplot(aes(x = Prewt, y = Postwt)) +
 #'    geom_point() +
-#'    geom_line(aes(size = Treat))
+#'    geom_line(data = sub_anor, aes(size = Treat))
 #' du(g, g2,  full_data = anorexia)
-#' du(g, g2, anorex.1, anorex.2,  full_data = anorexia)
+#' du(g, g2, anorex.1, anorex.2, list(data = sub_anor), full_data = anorexia)
 #' }
 du <- function(..., full_data) {
   models = list(...)
