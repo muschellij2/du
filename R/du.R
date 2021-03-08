@@ -57,6 +57,10 @@ disk_usage.default = function(object, full_data) {
   if ("data" %in% names(object)) {
     object = object$data
   }
+  if ("model" %in% names(object) &&
+      !is.data.frame(object)) {
+    object = object$model
+  }
   # beauty if doing this is that any data that's not used for model
   # is automatically dropped (NA/etc)
   result = cross_reference_data(object, full_data)

@@ -6,6 +6,7 @@
 \alias{disk_usage.gam}
 \alias{disk_usage.ggplot}
 \alias{disk_usage.glm}
+\alias{disk_usage.lm}
 \title{Disk Usage of Specific Object}
 \usage{
 disk_usage(object, full_data)
@@ -17,6 +18,8 @@ disk_usage(object, full_data)
 \method{disk_usage}{ggplot}(object = ggplot2::last_plot(), full_data)
 
 \method{disk_usage}{glm}(object, full_data)
+
+\method{disk_usage}{lm}(object, full_data)
 }
 \arguments{
 \item{object}{Different types, including \code{glm}, \code{ggplot}.}
@@ -50,5 +53,14 @@ if (requireNamespace("MASS", quietly = TRUE)) {
   anorex.1 <- glm(Postwt ~ Prewt + Treat + offset(Prewt),
                   family = gaussian, data = anorexia[ anorexia$Prewt > 70.25,])
   disk_usage(anorex.1, full_data = anorexia)
+  disk_usage(list(data = anorex.1$data), full_data = anorexia)
+}
+if (requireNamespace("MASS", quietly = TRUE)) {
+  utils::data(anorexia, package = "MASS")
+
+  anorex.1 <- lm(Postwt ~ Prewt + offset(Prewt), data = anorexia)
+  disk_usage(anorex.1, full_data = anorexia)
+  disk_usage(list(model = anorex.1$model), full_data = anorexia)
+
 }
 }
