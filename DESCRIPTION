@@ -18,7 +18,8 @@ Imports:
     ggplot2,
     magrittr,
     dplyr,
-    rlang
+    rlang,
+    mgcv
 Suggests: 
     MASS
 URL: https://github.com/muschellij2/du
