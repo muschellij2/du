@@ -157,16 +157,18 @@ was derived from</p></td>
 <span class='va'>g2</span> <span class='op'>=</span> <span class='va'>anorexia</span> <span class='op'>%&gt;%</span>
    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Prewt</span>, y <span class='op'>=</span> <span class='va'>Postwt</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
-   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='va'>Treat</span><span class='op'>)</span><span class='op'>)</span>
+   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>sub_anor</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='va'>Treat</span><span class='op'>)</span><span class='op'>)</span>
 <span class='fu'>du</span><span class='op'>(</span><span class='va'>g</span>, <span class='va'>g2</span>,  full_data <span class='op'>=</span> <span class='va'>anorexia</span><span class='op'>)</span>
 <span class='fu'>du</span><span class='op'>(</span><span class='va'>g</span>, <span class='va'>g2</span>, <span class='va'>anorex.1</span>, <span class='va'>anorex.2</span>, <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>sub_anor</span><span class='op'>)</span>, full_data <span class='op'>=</span> <span class='va'>anorexia</span><span class='op'>)</span>
 <span class='op'>}</span>
 </div><div class='output co'>#&gt; <span class='message'></span>
-#&gt; <span class='message'>Attaching package: ‘dplyr’</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:stats’:</span>
+#&gt; <span class='message'>Attaching package: ‘dplyr’</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from ‘package:nlme’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    collapse</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:stats’:</span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>    filter, lag</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:base’:</span>
 #&gt; <span class='message'></span>
-#&gt; <span class='message'>    intersect, setdiff, setequal, union</span></div><div class='output co'>#&gt;    Treat Prewt Postwt
+#&gt; <span class='message'>    intersect, setdiff, setequal, union</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Layer data is not implemented for disk_usage</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Layer data is not implemented for disk_usage</span></div><div class='output co'>#&gt;    Treat Prewt Postwt
 #&gt; 1    0.6   1.0    1.0
 #&gt; 2    0.6   1.0    1.0
 #&gt; 3    0.6   1.0    1.0
