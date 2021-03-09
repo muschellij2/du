@@ -50,6 +50,14 @@ if (requireNamespace("MASS", quietly = TRUE)) {
 
   anorex.1 <- glm(Postwt ~ Prewt + Treat + offset(Prewt),
                   family = gaussian, data = anorexia[ anorexia$Prewt > 70.25,])
-  disk_usage(anorex.1, full_data = anorexia)
+  sub_df = anorexia[ anorexia$Postwt < 80 , c("Prewt", "Postwt"), drop = FALSE]
+  sub_df2 = anorexia[ anorexia$Prewt > 70.25,]
+  print(head(disk_usage(anorex.1, full_data = anorexia)))
+  print(head(du(anorex.1, sub_df, sub_df2,
+                full_data = anorexia)))
 }
 ```
+
+# Known Issues
+
+The way things are found to be "used" is it is joined with the full data set.  If the new subsetted object (e.g. `data.frame`) is not unique, then the join will fail as it does some extra checking.
